@@ -4,6 +4,8 @@
  */
 package tallerpolimorfismo.Modelo;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,42 +19,44 @@ public class ViajeFamiliarTest {
     }
 
     @Test
-    public void testGetFamilia() {
+    public void testGetFamilia() throws ParseException {
         System.out.println("getFamilia");
-        ViajeFamiliar instance = null;
-        int expResult = 0;
+        ViajeFamiliar instance = new ViajeFamiliar(5,"Popayán", "Bogotá", 1250000, new SimpleDateFormat("dd/MM/yyyy").parse("01/05/2019"), 
+                    new SimpleDateFormat("dd/MM/yyyy").parse("05/05/2019"));
+        int expResult = 5;
         int result = instance.getFamilia();
-        assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result,0.001);
     }
 
     @Test
-    public void testSetFamilia() {
+    public void testSetFamilia() throws ParseException {
         System.out.println("setFamilia");
         int familia = 0;
-        ViajeFamiliar instance = null;
+               ViajeFamiliar instance = new ViajeFamiliar(5,"Popayán", "Bogotá", 1250000, new SimpleDateFormat("dd/MM/yyyy").parse("01/05/2019"), 
+                    new SimpleDateFormat("dd/MM/yyyy").parse("05/05/2019"));
         instance.setFamilia(familia);
-        fail("The test case is a prototype.");
     }
 
     @Test
-    public void testDescripcion() {
+    public void testDescripcion() throws ParseException {
         System.out.println("descripcion");
-        ViajeFamiliar instance = null;
-        String expResult = "";
+          ViajeFamiliar instance = new ViajeFamiliar(5,"Popayán", "Bogotá", 1250000, new SimpleDateFormat("dd/MM/yyyy").parse("01/05/2019"), 
+                    new SimpleDateFormat("dd/MM/yyyy").parse("05/05/2019"));;
+        String expResult = "Viaje para disfrutar con toda tu familia";
         String result = instance.descripcion();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+       
     }
 
     @Test
-    public void testCualquierMetodo2() {
+    public void testCualquierMetodo2() throws ParseException {
         System.out.println("cualquierMetodo2");
-        ViajeFamiliar instance = null;
-        String expResult = "";
+                ViajeFamiliar instance = new ViajeFamiliar(5,"Popayán", "Bogotá", 1250000, new SimpleDateFormat("dd/MM/yyyy").parse("01/05/2019"), 
+                    new SimpleDateFormat("dd/MM/yyyy").parse("05/05/2019"));
+        String expResult = "metodo viajeFamiliar";
         String result = instance.cualquierMetodo2();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+       
     }
     
 }
